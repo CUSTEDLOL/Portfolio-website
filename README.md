@@ -38,7 +38,7 @@ Welcome to the repository for [visheshjain.com](https://visheshjain.com), the dy
   Fully optimized for smartphones, tablets, and desktops, ensuring smooth navigation everywhere.
   
 - **Fun Easter Eggs**  
-  While you're navigating the website try to find fun easter eggs in the tools I've set up.
+  While you're navigating the website try to find fun easter eggs.
 
 ## Installation
 
