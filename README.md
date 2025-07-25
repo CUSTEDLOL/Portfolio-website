@@ -44,7 +44,7 @@ Welcome to the repository for [visheshjain.com](https://visheshjain.com), the dy
 
 To run the site locally:
 
-git clone https://github.com/yourusername/visheshjain.com.git
+git clone [https://github.com/yourusername/visheshjain.com.git](https://github.com/CUSTEDLOL/Portfolio-website.git)
 cd visheshjain.com
 npm install
 npm start
