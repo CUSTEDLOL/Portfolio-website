@@ -1,0 +1,245 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(to bottom right, #0f172a, #1e293b, #0f172a);
+}
+
+
+
+@layer base {
+  :root {
+    --background: 220 15% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 224 25% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 25% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 190 100% 50%;
+    --primary-foreground: 220 15% 8%;
+
+    --secondary: 224 25% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 224 25% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 224 25% 15%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 224 25% 15%;
+    --input: 224 25% 15%;
+    --ring: 190 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 224 25% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 190 100% 50%;
+    --sidebar-primary-foreground: 220 15% 8%;
+    --sidebar-accent: 224 25% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 224 25% 15%;
+    --sidebar-ring: 190 100% 50%;
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 224 25% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 25% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 190 100% 50%;
+    --primary-foreground: 220 15% 8%;
+
+    --secondary: 224 25% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 224 25% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 224 25% 15%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 224 25% 15%;
+    --input: 224 25% 15%;
+    --ring: 190 100% 50%;
+    --sidebar-background: 224 25% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 190 100% 50%;
+    --sidebar-primary-foreground: 220 15% 8%;
+    --sidebar-accent: 224 25% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 224 25% 15%;
+    --sidebar-ring: 190 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    line-height: 1.5;
+    background: linear-gradient(135deg, hsl(220, 15%, 8%) 0%, hsl(224, 25%, 10%) 50%, hsl(220, 15%, 8%) 100%);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Tech-themed body background with animated particles */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(34, 211, 238, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+  }
+
+  .text-glow-blue {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+
+  .text-glow-purple {
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  }
+
+  .glassmorphic {
+    background: rgba(34, 211, 238, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(34, 211, 238, 0.1);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .glassmorphic-card {
+    background: rgba(34, 211, 238, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(34, 211, 238, 0.15);
+    box-shadow: 
+      0 12px 40px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .gradient-border {
+    background: linear-gradient(45deg, #06b6d4, #3b82f6) padding-box,
+                linear-gradient(45deg, #06b6d4, #3b82f6) border-box;
+    border: 2px solid transparent;
+  }
+
+  .tech-grid {
+    background-image: 
+      linear-gradient(rgba(34, 211, 238, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 211, 238, 0.1) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .circuit-pattern {
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(34, 211, 238, 0.3) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+
+  .neon-border {
+    border: 1px solid transparent;
+    background: linear-gradient(hsl(var(--background)), hsl(var(--background))) padding-box,
+                linear-gradient(45deg, hsl(190, 100%, 50%), hsl(217, 91%, 60%)) border-box;
+  }
+
+  .cyber-gradient {
+    background: linear-gradient(135deg, 
+      rgba(34, 211, 238, 0.1) 0%, 
+      rgba(59, 130, 246, 0.1) 35%, 
+      rgba(139, 92, 246, 0.1) 100%);
+  }
+}
+
+/* Smooth scrolling for the entire page */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.3), rgba(59, 130, 246, 0.3));
+  border-radius: 6px;
+  border: 2px solid hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.5), rgba(59, 130, 246, 0.5));
+}
+
+/* Loading and transition animations */
+@keyframes matrix-rain {
+  0% { transform: translateY(-100vh); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.matrix-char {
+  animation: matrix-rain 3s linear infinite;
+  color: rgba(34, 211, 238, 0.7);
+  font-family: 'JetBrains Mono', monospace;
+}
